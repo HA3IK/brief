@@ -1,0 +1,619 @@
+
+/* START! CSS нармализация стилей  TODO! Почистити в кінці
+   ============================================================================================================== */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Правильное отображение "inline-block" не определено в IE 8/9.
+ * 2. Нормализация вертикального выравнивания "progress" в Chrome, Firefox и Opera
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Предотвращение для современных браузеров, чтобы не отображали "audio" без контроля
+ * Удаляем излишнюю высоту в iOS 5 устройствах
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Чтобы элементы с атрибутом "[hidden]" не отображались в IE 8/9/10.
+ * Скрыть "template" элемент в IE 8/9/11, Safari и Firefox < 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+
+/* Ссылки
+   ========================================================================== */
+
+/**
+ * Убираем серый цвет фона из активных ссылок в IE 10
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Предотвращаем возможное обведение при фокусировке, а также при наведении мыши во всех браузерах, тем самым улучшая читабельность
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Семантика текстового уровня
+   ========================================================================== */
+
+/**
+ * Подчеркивания для abbr с атрибутом "title" не отображается в IE 8/9/10/11, Safari и Chrome
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Устанавливаем стиль "bolder" для Firefox 4+, Safari и Chrome
+ */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Устанавливаем стили для Safari и Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+
+/**
+ * Стили не отображаються в IE 8/9
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Чтобы привести к эдиному стилю отображение во всех браузерах
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Предотвращение влияние "line-height" для "sub" и "sup" во всех браузерах
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* Встроенное содержание
+   ========================================================================== */
+
+/**
+ * Убираем рамки у "img" элемента в IE 8/9/10
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Правильное отображение overflow (спрятаны) в IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Группирующие содержание
+   ========================================================================== */
+
+/**
+ * Устраняем различия между Firefox и другими браузерами
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Переполненое содержимым во всех браузерах
+ */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Устраняем странное отображение "em" единиц измирения во всех браузерах
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Формы
+   ========================================================================== */
+
+/**
+ * Известные ограничения: по умолчанию, у Chrome и Safari на OS X стили для "select"
+ * весьма ограницены, если не установлено свойство "border"
+ */
+
+/**
+ * 1. Корректный цвет не наследуется
+ *    Известная проблема: влияет на цвет отключенных (disabled) элементов
+ * 2. Корректные параметры шрифта не наследуются
+ * 3. Внешние отступы установлены по-разному в Firefox 4+, Safari и Chrome
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+/**
+ * Исправляем "overflow", который по умолчанию включен "hidden" в IE 8/9/10/11
+ */
+button {
+  overflow: visible;
+}
+
+/**
+ * Исправляем противоречивый "text-transform" наследуемый для "button" и "select"
+ * Все остальные элементы управления формами не наследуют "text-transform" значения
+ * Исправляем наследование стиля для "button" в Firefox, IE 8/9/10/11 и Opera
+ * Исправляем наследование стиля для "select" в Firefox
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Избегаем ошибки в WebKit на Android 4.0.* где (2) разрушает управление у "audio"
+ *    и "video"
+ * 2. Исправляем несовместимость в нажимаемом типах "input" в iOS.
+ * 3. Улучшаем удобство и согласованость стиля курсора между image-типом "input" и другими
+ */
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Устанавливаем курсор на тип по умолчанию (default), для отключенных (disabled) элементов "input"
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Убираем внутренние отступы и границы в Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Исправляем настройки в Firefox 4+ "line-height" для "input" использующих "!important" в
+ * UA таблицах стилей
+ */
+input {
+  line-height: normal;
+}
+
+/**
+ * Рекомендуется, не использовать стили на этих элементах
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ * Реализация Firefox-ов не соблюдает box-sizing, padding или width
+ *
+ * 1. Изменить box-sizing установленый для "content-box" в IE 8/9/10.
+ * 2. Убрать излишние отступы у IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+input[type="radio"]:focus {
+	outline: none;
+}
+
+/**
+ * Исправить стиль курсора в Chrome инкремент/декремент кнопках. Для нужного
+ * "font-size" значения "input", это вызывает стиль курсора кнопки декремента перейти
+ * от "default" к "text"
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Устанавливаем "appearance" в "searchfield" для Safari и Chrome.
+ * 2. Устанавливаем "box-sizing" в "border-box" для Safari и Chrome
+ *    (включить `-moz` для расширений в будущем).
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Убираем внутренний отступ и кнопку отмены поиска для Safari и Chrome на OS X
+ * Safari (но не Chrome) зажимает кнопку отмены, когда есть внутрение отступы
+ * в "input" типа "search" (и появляется "textfield")
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Определить соответствия border, margin и padding
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets
+ */
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Убираем вертикальный scroll-бар в IE 8/9/10/11
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Не наследует "font-weight" (применяться правило выше)
+ * Заметка: по умолчанию не могут быть безопасно изменены в Chrome и Safari на OS X
+ */
+optgroup {
+  font-weight: bold;
+}
+
+/* Таблицы
+   ========================================================================== */
+
+/**
+ * Убираем расстояние между ячейками таблицы
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+/**
+ * Контроль курсора над тегом abbr с атрибутом title (разъяснением)
+ */
+abbr[title] {
+	cursor: help;
+}
+
+/* END! CSS нармализация стилей
+   ============================================================================================================== */
+
+
+
+/* START! Основные оформление страницы
+   ============================================================================================================== */
+
+html, body {
+    min-width: 320px !important;
+}
+
+/**
+ * 1. Предотвращаем в iOS регулирование размера текста после изменения ориентации, без отключения пользовательського зума
+ */
+html {
+  -ms-text-size-adjust: 100%; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 1 */
+}
+
+/**
+ * 1. В некоторых браузерах стоит фон по умолчанию
+ * 2. Сглаживание текста для WebKit браузеров
+ * 3. Убираем подсветку кликабельных объектов в некоторых мобильный WebKit браузерах
+ */
+body {
+	background: #fff; /* 1 */
+	font: normal normal normal 16px/1.45 "Roboto", Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased; /* 2 */
+	-moz-osx-font-smoothing: grayscale; /* 2 */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 3 */
+}
+
+/**
+ * Вертикальный ритм
+ */
+h1,
+h2,
+h3,
+h4 {
+  margin: 1.414em 0 0.5em;
+  line-height: 1.2;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+label {
+	cursor: pointer;
+}
+
+/* TODO! Добавити попередження для старих версій браузерів */
+
+
+/* START! Блок HERO-картинка
+   ========================================================================================== */
+
+.hero {
+	/*
+	  Розширення картинки:
+    https://wallpaperscraft.com/wallpaper/laptop_room_on_the_desk_keyboard_mouse_apple_window_interior_73963
+	*/
+  background: url(img/hero-img-optimize.jpg) no-repeat 50% 50%; /* TODO! Перемістити в resolution */
+  display: table;
+  width: 100%;
+  -webkit-background-size: cover;
+   -khtml-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+/* Предназначен для укрепления структуры */
+.hero-wrap {
+	display: table-row;
+}
+
+.hero-data {
+	display: table-cell;
+	color: #fff;
+	height: 30em;
+	padding: 2.5em 0;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.hero-title {
+	font-size: 500%;
+	font-weight: 700;
+	text-transform: uppercase;
+	cursor: default;
+}
+
+.hero-description {
+	font-size: 150%;
+	font-weight: 300;
+	padding: 0 1em;
+	cursor: default;
+}
+
+.hero-button {
+	display: inline-block;
+	margin-top: 1.45em;
+	padding: 1em;
+	color: #fff;
+	text-decoration: none;
+	border: .25em solid #fff;
+	text-transform: uppercase;
+}
+
+.hero-button:hover {
+	color: #FF4420;
+	border-color: #FF4420;
+}
+
+/* END! Блок HERO-картинка
+   ========================================================================================== */
+
+
+/* START! Блок с формой брифа
+   ========================================================================================== */
+
+#brief-wrap {
+	margin: 0 auto;
+	padding: 0.1em 2em 0;
+	max-width: 96em;
+	text-align: center;
+}
+
+.brief-title {
+	font-size: 225%;
+	font-weight: 300;
+	color: #333;
+}
+
+.brief-notice {
+	font-weight: 300;
+	color: #828179;
+}
+
+.brief-title--bold {
+	font-weight: 700;
+}
+
+.brief-subtitle {
+  text-align: left;
+  margin-top: 2.5em;
+  padding-left: .25em;
+	font-size: 150%;
+	color: #333;
+	font-weight: 500;
+	border-bottom: 1px solid #FF4420;
+}
+
+.brief-input {
+	font-weight: 300;
+}
+
+.brief-input[type="text"] {
+	margin: .5em;
+	font-size: 120%;
+	padding: 0 .6em;
+	line-height: 2.8em;
+  border: .15em solid #ddd;
+  width: 44%;
+  text-align: left;
+  vertical-align: top;
+}
+
+.brief-textarea {
+	vertical-align: top;
+	text-align: left;
+  margin: .5em;
+  font-size: 120%;
+  height: 8.45em;
+  padding: .6em;
+  border: .15em solid #ddd;
+  width: 44%;
+  font-weight: 300;
+  resize: none;
+}
+
+.brief-item {
+  display: inline-block;
+  width: 44%;
+  margin: .5em;
+  vertical-align: top;
+  text-align: center;
+  font-size: 110%;
+  padding: .6em;
+  border: .15em solid #ddd;
+  font-weight: 300;
+  color: #aeaeae;
+}
+
+.brief-item--width100 {
+	width: 92%;
+}
+
+.brief-item-choice-group {
+	/*text-align: center;*/
+	outline: 1px solid red;
+}
+
+.brief-item-choice {
+	display: inline-block;
+	width: 19.8%;
+}
+
+.brief-item-choice + .brief-item-choice {
+  /*margin-left: 5%;*/
+}
+
+.brief-item-choice > input {
+
+}
+
+/* 1. Запрещаем перенос на другую строку */
+.brief-item-choice {
+	font-size: 120%;
+	white-space: nowrap; /* 1 */
+	word-wrap: normal; /* 1 */
+}
+
+.brief-item:hover,
+.brief-textarea:focus,
+.brief-input[type="text"]:focus {
+  outline: .25em solid #FF4420;
+}
+
+.brief-submit {
+  /* Попробувати бірюзовий колір з оранжевим ховером */
+}
+
+/* END! Блок с формой брифа
+   ========================================================================================== */
+
+/* END! Основные оформление страницы
+   ============================================================================================================== */
