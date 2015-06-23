@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="uk"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="uk"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="uk"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="uk"><!--<![endif]-->
 <head>
 	<meta charset="utf-8"/>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
 	<title>BRIEF</title>
+	<meta name="author" content="HA3IK"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<link href="http://fonts.googleapis.com/css?family=Roboto:500,700,400,300" rel="stylesheet" type="text/css"/>
+	<script src="js/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- HERO-картинка -->
+  <!-- START! HERO-картинка -->
   <div class="hero">
     <div class="hero-wrap">
     	<section class="hero-data">
     	  <h1 class="hero-title">Бріф</h1>
-    	  <p class="hero-description">Опитувальна анкета, яка дає виконавцю можливість зібрати важливі данні та чіткіше зрозуміти графічні, технічні та інші важливі аспекти проекта.</p>
-    	  <a href="#brief-wrap" class="hero-button">Заповнити форму</a>
+    	  <p class="hero-description">Опитувальна анкета, яка дає виконавцю можливість зібрати важливі данні та чіткіше зрозуміти графічні, технічні та інші важливі аспекти проекта</p>
+    	  <a class="hero-button" href="#brief-wrap" role="button">Заповнити форму</a>
     	</section>
     </div>
   </div>
+  <!-- END! HERO-картинка -->
+  <!-- START! Форма брифа -->
   <section id="brief-wrap">
   	<h2 class="brief-title">Бріф на розробку сайта для ресторану <b class="brief-title--bold">«Anastacia»</b></h2>
   	<p class="brief-notice">Заповніть, будь ласка, поля нижче приведеної форми.</p>
   	<form method="post">
-  	  <!-- Раздел "Інформація по ресторану" -->
+  	  <!-- START! Раздел "Інформація по ресторану" -->
       <section>
       	<h3 class="brief-subtitle">Інформація по ресторану</h3>
         <input class="brief-input" name="full_name" type="text" placeholder="Повна назва ресторану"/>
@@ -62,13 +70,15 @@
 	        </span>
         </div>
       </section>
+      <!-- END! Раздел "Інформація по ресторану" -->
+      <!-- START! Раздел "Цільова аудиторія" -->
 		  <section>
 		  	<h3 class="brief-subtitle">Цільова аудиторія</h3>
 		  	<textarea class="brief-textarea" name="target_audience" cols="30" rows="6" wrap="soft" placeholder="Опишіть вашу цільову аудиторію. Вкажіть їх характерні риси, особливості тощо."></textarea>
 		  	<textarea class="brief-textarea" name="key_action" cols="30" rows="6" wrap="soft" placeholder="Яку ключову дію повинен здійснити користувач на сайті?"></textarea>
+		  	<!-- START! Список языков -->
 		  	<div class="brief-item brief-item--width100">
 		  	  <p class="brief-item-title">Виберіть основні мови, які повинен підтримувати інтерфейс сайту</p>
-		  	  <!-- START! Список языков -->
 		  	  <span class='brief-item-choice'>
 		  	  	<label class='brief-item-choice' title="Вибір цього пункту призведе до підключення великої кількості лишнього функціоналу">
 						  Всі
@@ -615,9 +625,11 @@
 					    <input name='multilanguage[]' type='checkbox' value='Javanese'>
 					  </label>
 					</span>
-		  	  <!-- END! Список языков -->
 		  	</div>
+		  	<!-- END! Список языков -->
 		  </section>
+		  <!-- END! Раздел "Цільова аудиторія" -->
+		  <!-- START! Раздел "Дизайн" -->
 		  <section>
 		  	<h3 class="brief-subtitle">Дизайн</h3>
 		  	<textarea class="brief-textarea" name="good_site" cols="30" rows="6" wrap="soft" placeholder="Вкажіть адреси сайтів, дизайн яких вам подобається (не обов'язково компаній з ресторанної індустрії)."></textarea>
@@ -625,13 +637,24 @@
 		  	<textarea class="brief-textarea" name="site_impressions" cols="30" rows="6" wrap="soft" placeholder="Опишіть враження, яке повинен справляти дизайн на відвідувача?"></textarea>
 		  	<textarea class="brief-textarea" name="design_wishes" cols="30" rows="6" wrap="soft" placeholder="Інші уточнення/побажання: фірмовий стиль, шрифти, кольори тощо"></textarea>
 		  </section>
+		  <!-- END! Раздел "Дизайн" -->
+		  <!-- START! Раздел "Технічне Завдання" -->
 		  <section>
 		  	<h3 class="brief-subtitle">Технічне Завдання</h3>
 		  	<textarea class="brief-textarea" name="design_wishes" cols="30" rows="6" wrap="soft" placeholder="Хочете добавити вимоги/поправки, які не були зазначені в готовому ТЗ?"></textarea>
 		  	<textarea class="brief-textarea" name="design_wishes" cols="30" rows="6" wrap="soft" placeholder="Хочете внести зміни/поправки до прототипу продемонстрованого в ТЗ?"></textarea>
 		  </section>
+		  <!-- END! Раздел "Технічне Завдання" -->
   	  <input class="brief-submit" type="submit" value="Готово" name="brief_submit"/>
   	</form>
   </section>
+  <!-- END! Форма брифа -->
+  <footer class="footer">
+  	<p class="copyright" role="contentinfo">© <a href="//ha3ik.github.io/resume/" rel="author" target="_blank">HA3IK</a> –<time datetime="2015-01-23">2015</time>–</p>
+  </footer>
+  <!-- JS: -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
+  <script src="js/main.js"></script>
 </body>
 </html>
