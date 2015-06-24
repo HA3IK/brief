@@ -313,6 +313,11 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
+/* TODO! Проверить появятся ли троиточия. Если нет - добавить вендори */
+input[placeholder] {
+	text-overflow: ellipsis;
+}
+
 /**
  * Определить соответствия border, margin и padding
  */
@@ -516,7 +521,7 @@ label {
 
 .brief-notice {
 	font-weight: 300;
-	color: #828179;
+	color: #888;
 }
 
 .brief-title--bold {
@@ -548,6 +553,37 @@ label {
   vertical-align: top;
 }
 
+
+.brief-item,
+.brief-input,
+.brief-textarea {
+	color: #888;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+	color: #888;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+	opacity: 1;
+	color: #888;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+	opacity: 1;
+	color: #888;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+	color: #888;
+}
+
+
+
 .brief-textarea {
 	vertical-align: top;
 	text-align: left;
@@ -571,7 +607,6 @@ label {
   padding: .6em;
   border: .15em solid #ddd;
   font-weight: 300;
-  color: #aeaeae;
 }
 
 .brief-item--width100 {
@@ -644,7 +679,12 @@ label {
    ============================================================================================================== */
 
 @media (max-width: 1030px) {
-
+  .brief-input[type="text"],
+  .brief-textarea,
+  .brief-item {
+  	margin: .5em 0;
+    width: 100%;
+	}
 }
 
 /* END! Условия адаптации
