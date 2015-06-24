@@ -435,6 +435,18 @@ label {
 	cursor: pointer;
 }
 
+.js noscript {
+  display: none;
+}
+
+.no-js noscript {
+  display: inline-block;
+}
+
+.wrap {
+	display: none;
+}
+
 /* TODO! Добавити попередження для старих версій браузерів */
 
 
@@ -557,6 +569,7 @@ label {
 .brief-item,
 .brief-input,
 .brief-textarea {
+  /* TODO! Попробовать #777 */
 	color: #888;
 }
 
@@ -668,6 +681,93 @@ textarea:-ms-input-placeholder {
 }
 
 /* END! Подвал страницы
+   ========================================================================================== */
+
+
+/* START! Блок сообщения - получить спец. ссылку
+   ========================================================================================== */
+
+.get_url-title {
+	font-weight: 300;
+	font-size: 225%;
+	color: #333;
+	text-align: center;
+}
+
+.get_url-data {
+  padding-top: 2em;
+  color: #777;
+  margin: 0 auto;
+  max-width: 70em;
+  width: 90%;
+  font-size: 110%;
+  font-weight: 300;
+}
+
+.get_url-notice {
+  padding: 0 1em 0 .25em;
+  color: #333;
+  font-weight: 500;
+  border-bottom: 1px solid #FF4420;
+}
+
+.get_url-list {
+  list-style: none;
+  padding: .3em 0 .3em 1.5em;
+}
+
+.get_url-list b {
+  font-weight: 400;
+}
+
+/* END! Блок сообщения - получить спец. ссылку
+   ========================================================================================== */
+
+
+/* START! Модальное окно
+   ========================================================================================== */
+
+/* Полупрозрачный задний фон */
+#modal {
+  background: rgba(0,0,0,.5);
+  bottom: 0;
+  display: none;
+  outline: 0;
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  -webkit-overflow-scrolling: touch;
+}
+
+/**
+ * Обёртка
+ * 1. Чтобы модальное окно не прижималось к границам окна браузера
+ */
+.modal-dialog {
+  margin: 0 auto;
+  max-width: 800px;
+  min-width: 310px;
+  padding: 3% 1%; /* 1 */
+  position: relative;
+}
+
+/* Основной блок с содержимым (основа) */
+.modal-content {
+  background: #3b3b3b;
+  position: relative;
+   -khtml-box-shadow: 0 3px 9px #151515;
+  -webkit-box-shadow: 0 3px 9px #151515;
+     -moz-box-shadow: 0 3px 9px #151515;
+    -ms-box-shadow: 0 3px 9px #151515;
+     -o-box-shadow: 0 3px 9px #151515;
+      box-shadow: 0 3px 9px #151515;
+}
+
+/* END! Модальное окно
    ========================================================================================== */
 
 /* END! Основные оформление страницы
