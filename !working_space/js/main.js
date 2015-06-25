@@ -12,7 +12,7 @@ $(document).ready(function() {
             //TODO! Убрать!
             console.log('Отправляем: '+query);
             $.ajax({
-              url: 'http://crossdomainajax/index.php',
+              url: 'http://ajaxsync.96.lt/index.php',
               type: 'POST',
               crossDomain: true,
               cache: false,
